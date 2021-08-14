@@ -412,12 +412,62 @@ textarea {
   }
 }
 
-.main {
-  --factor: 0.75;
-  background-image: url("../images/cloud-lg1.png"), url("../images/cloud-lg1.png"), url("../images/cloud-lg1.png"), url("../images/cloud-lg2.png");
-  background-size: calc(var(--factor)*488px) calc(var(--factor)*138px);
+.cloud {
+  position: absolute;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: top 3% left -30%, top 6% left 30%, top 10% left 30%, top 23% left 16%;
+  --factor: 0.75;
+  width: calc(var(--factor)*488px);
+  height: calc(var(--factor)*138px);
+  z-index: -1;
+}
+.cloud:nth-of-type(1) {
+  background-image: url("../images/cloud-lg1.png");
+  top: 79px;
+  left: -273px;
+}
+.cloud:nth-of-type(2) {
+  background-image: url("../images/cloud-lg1.png");
+  top: 159px;
+  left: 273px;
+}
+.cloud:nth-of-type(3) {
+  background-image: url("../images/cloud-lg1.png");
+  top: 265px;
+  left: 273px;
+}
+.cloud:nth-of-type(4) {
+  background-image: url("../images/cloud-lg1.png");
+  top: 609px;
+  left: 218px;
+}
+.cloud:nth-of-type(5) {
+  background-image: url("../images/cloud-lg1.png");
+  top: 500px;
+  left: 850px;
+  z-index: 5;
+  --factor: 0.95;
+}
+.cloud:nth-of-type(6) {
+  background-image: url("../images/cloud-lg2.png");
+  top: 1100px;
+  left: 1100px;
+  --factor: 0.95;
+}
+.cloud:nth-of-type(7) {
+  background-image: url("../images/cloud-lg2.png");
+  top: 1400px;
+  left: 400px;
+}
+.cloud:nth-of-type(8) {
+  background-image: url("../images/cloud-lg1.png");
+  top: 1700px;
+  left: -100px;
+}
+.cloud:nth-of-type(9) {
+  background-image: url("../images/cloud-lg1.png");
+  top: 1850px;
+  left: 500px;
 }
 
 :root {
@@ -426,6 +476,7 @@ textarea {
 
 body {
   background-color: rgba(0, 0, 0, 0.09);
+  overflow-x: hidden;
 }
 body::-webkit-scrollbar {
   width: 0;
@@ -458,6 +509,9 @@ h1, h2 {
   font-size: 1.05rem;
 }
 
+.main {
+  position: relative;
+}
 .main .section {
   height: 100vh;
 }
@@ -528,13 +582,6 @@ h1, h2 {
   font-size: 0.875rem;
   line-height: 1.25rem;
   margin: 0 0 1em;
-}
-
-.cloud {
-  position: absolute;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  z-index: 3;
 }
 
 .nav-dots {
